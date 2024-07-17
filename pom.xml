@@ -23,10 +23,11 @@
   </dependencies>
 
   <build>
-    <!--
-    https://code.revelc.net/formatter-maven-plugin/examples.html#basic-configuration-using-external-resource -->
+
 
     <plugins>
+       <!--
+    https://code.revelc.net/formatter-maven-plugin/examples.html#basic-configuration-using-external-resource -->
       <plugin>
         <groupId>net.revelc.code.formatter</groupId>
         <artifactId>formatter-maven-plugin</artifactId>
