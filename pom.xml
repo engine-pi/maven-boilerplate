@@ -23,26 +23,14 @@
   </dependencies>
 
   <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>net.revelc.code.formatter</groupId>
-          <artifactId>formatter-maven-plugin</artifactId>
-          <version>2.24.1</version>
-          <dependencies>
-            <dependency>
-              <groupId>de.pirckheimer-gymnasium</groupId>
-              <artifactId>engine-pi</artifactId>
-              <version>0.26.0</version>
-            </dependency>
-          </dependencies>
-        </plugin>
-      </plugins>
-    </pluginManagement>
+    <!--
+    https://code.revelc.net/formatter-maven-plugin/examples.html#basic-configuration-using-external-resource -->
+
     <plugins>
       <plugin>
         <groupId>net.revelc.code.formatter</groupId>
         <artifactId>formatter-maven-plugin</artifactId>
+        <version>2.24.1</version>
         <executions>
           <execution>
             <goals>
@@ -53,6 +41,30 @@
             </configuration>
           </execution>
         </executions>
+        <dependencies>
+          <dependency>
+            <groupId>de.pirckheimer-gymnasium</groupId>
+            <artifactId>engine-pi</artifactId>
+            <version>0.26.0</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+      <!--
+      https://maven.apache.org/plugins/maven-javadoc-plugin/examples/stylesheet-configuration.html -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.7.0</version>
+        <configuration>
+          <stylesheetfile>javadoc-stylesheet.css</stylesheetfile>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>de.pirckheimer-gymnasium</groupId>
+            <artifactId>engine-pi</artifactId>
+            <version>0.26.0</version>
+          </dependency>
+        </dependencies>
       </plugin>
     </plugins>
   </build>
